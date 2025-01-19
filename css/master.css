@@ -285,6 +285,7 @@ div button:hover{
     justify-content: center;
     width: 100%;
     margin-bottom: 1rem;
+    position: fixed;
 }   
 
 .footername {
