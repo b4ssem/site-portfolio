@@ -158,6 +158,14 @@ hr{
 }
 /*Contact*/ 
 
+.sent{
+    font-family: Open Sans;
+}
+
+.error{
+    font-family: Open Sans;
+}
+
 .questions{
     font-family: Open Sans;
 }
