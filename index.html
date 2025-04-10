@@ -17,7 +17,7 @@
 
 <body>
     <nav>
-        <navbar>    
+        <navbar>
             <ul>
                 <a href="index">Accueil</a>
                 <a href="parcours">Parcours</a>
@@ -26,29 +26,39 @@
         </navbar>
     </nav>
     <main>  
-        <div class="desc">
-            <h1 class="title">BASSEM MEGHICHE</h1>
-            <h2>Étudiant en première année de BUT MMI
-                à l’IUT de Cergy Pontoise - Antenne de
-                Sarcelles</h2>
-        </div>
-        <div class="listeli">
-            <ul>
-                <li>
-                    <a class="links" href="mailto:bmeghiche06@gmail.com"> <img class="imglinks" src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png">bmeghiche06@gmail.com</a>
-                </li>
-                <li>
-                    <a class="links" href="https://www.linkedin.com/in/b4ssem/"> <img class="imglinks" src="images/linkedin.png">/in/b4ssem/</a>
-                </li>
-                <li>
-                    <a class="links" href="https://github.com/b4ssem?tab=repositories"> <img class="imglinks" src="images/github.png">github.com/b4ssem</a>
-                </li>
-            </ul>
-        </div>
-        
-        <div class="licv">
-            <a href="pdf/Bassem MEGHICHE.pdf" target="_blank">Télécharger mon CV</a>
-        </div>
+        <div class="flex flex-col items-center justify-center min-h-screen space-y-8 px-4 text-center">
+            <div>
+              <h1 class="text-3xl sm:text-4xl font-bold mb-2">BASSEM MEGHICHE</h1>
+              <h2 class="text-lg sm:text-xl text-gray-700">
+                Étudiant en première année de BUT MMI<br>
+                à l’IUT de Cergy Pontoise - Antenne de Sarcelles
+              </h2>
+            </div>
+          
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+              <a href="mailto:bmeghiche06@gmail.com" class="flex items-center space-x-2 text-gray-800 hover:text-blue-600">
+                <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png" alt="Gmail" class="w-6 h-6">
+                <span>bmeghiche06@gmail.com</span>
+              </a>
+          
+              <a href="https://www.linkedin.com/in/b4ssem/" class="flex items-center space-x-2 text-gray-800 hover:text-blue-600">
+                <img src="images/linkedin.png" alt="LinkedIn" class="w-6 h-6">
+                <span>/in/b4ssem/</span>
+              </a>
+          
+              <a href="https://github.com/b4ssem?tab=repositories" class="flex items-center space-x-2 text-gray-800 hover:text-blue-600">
+                <img src="images/github.png" alt="GitHub" class="w-6 h-6">
+                <span>github.com/b4ssem</span>
+              </a>
+            </div>
+          
+            <div>
+              <a href="pdf/Bassem MEGHICHE.pdf" target="_blank"
+                 class="px-[30px] py-[16px] bg-blue-600 text-white font-semibold text-lg shadow-md rounded transition-all duration-200 hover:px-[35px] hover:bg-blue-500 hover:shadow-[0_15px_20px_rgba(59,130,246,0.2)]">
+                Télécharger mon CV
+              </a>
+            </div>
+          </div>
         
     </main>
 </body>
