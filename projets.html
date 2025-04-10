@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <link rel="icon" type="image/x-icon" href="/images/logo.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="src/output.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Bassem Meghiche</title>
+    <style>
+        @layer utilities {
+          .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+          }
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        }
+      </style>
+</head>
+
+<body class="flex flex-col min-h-screen bg-gray-50 text-gray-800">
+
+    <nav class="bg-white shadow px-4 py-4">
+      <ul class="flex justify-center gap-6 text-base font-semibold text-gray-700">
+        <a href="index" class="hover:text-blue-600">Accueil</a>
+        <a href="parcours" class="hover:text-blue-600">Parcours</a>
+        <a href="projets" class="hover:text-blue-600">Projets</a>
+      </ul>
+    </nav>
+  
+    <main class="flex-1 max-w-6xl mx-auto px-6 py-10 space-y-10">
+  
+      <h1 class="text-3xl font-bold text-center mb-6">Mes Projets</h1>
+  
+      <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        
+        <div class="bg-white p-6 rounded-lg shadow-lg fade-in space-y-3">
+            <h2 class="text-xl font-semibold">🎬 Première vidéo en motion design</h2>
+            <p>Je suis heureux de vous partager ma première vidéo réalisée en motion design.</p>
+            <p>🎯 <strong>Objectif :</strong> créer une vidéo de 8-12 secondes à partir d’un texte donné en utilisant les compétences apprises durant nos cours.</p>
+            <p class="text-sm text-gray-500">04/25</p>
+            <video controls src="https://dms.licdn.com/playlist/vid/v2/D4E05AQGcfERxAb1z9g/mp4-720p-30fp-crf28/B4EZYacb0cHMBg-/0/1744200386352?e=1744923600&v=beta&t=CSITxZUJYrFY_-_ZTjEoYaEpY_-taGJc9lyjfasNSkI" class="w-full mt-3 rounded"></video>
+        </div>
+  
+        <div class="bg-white p-6 rounded-lg shadow-lg fade-in space-y-3">
+            <h2 class="text-xl font-semibold">🍗 Ouverture fictive de Raising Cane’s en France 🇫🇷</h2>
+            <p>Imaginons un instant : Raising Cane's débarque en France !</p>
+            <p>Pour cette ouverture fictive, j’ai créé des visuels au format poster et post Instagram annonçant l’arrivée de ce célèbre restaurant de poulet frit, dans le cadre d’une initiation à Photoshop.</p>
+            <p>🎨 <strong>Réalisé sur Photoshop</strong></p>
+            <p class="text-sm text-gray-500">03/25</p>
+    
+
+            <div class="relative">
+              <img src="https://media.licdn.com/dms/image/v2/D4E22AQE14Y0bYd7HbQ/feedshare-shrink_800/B4EZYAG45vHUAk-/0/1743758528965?e=1747267200&v=beta&t=1uKgKi4EUfprrGV2Tpbs7DaKUS_DlYe66TPY8b-Ys4c" alt="Raising Cane's Poster" class="w-full rounded-lg shadow-md object-cover cursor-pointer" onclick="window.location.href='gallery-raising-canes.html'">
+            </div>
+          </div>
+  
+        <div class="bg-white p-6 rounded-lg shadow-lg fade-in space-y-3">
+            <h2 class="text-xl font-semibold">🎨 L’art du triangle d’exposition 🎥</h2>
+            <p>Dans le cadre d’un projet audiovisuel, Samuel Melchior et moi avons réalisé un tutoriel vidéo au format TikTok sur l’exposition d’une image, en expliquant comment ajuster :</p>
+            <ul class="list-disc pl-6">
+                <li>le diaphragme</li>
+                <li>la vitesse d’obturation</li>
+                <li>et l’intensité lumineuse</li>
+            </ul>
+            <p>🎞️ <strong>Montage et animation :</strong> DaVinci Resolve</p>
+            <p>🎨 <strong>Fond animé :</strong> After Effects</p>
+            <p class="text-sm text-gray-500">11/24</p>
+            <video controls src="videos/correc.mov" class="w-full mt-3 rounded"></video>
+        </div>
+      </section>
+  
+    </main>
+</body>
+
+<footer class="mt-auto py-4 text-center text-sm text-gray-500">
+    <p>© 2025 par <span class="font-semibold text-gray-700">Bassem MEGHICHE</span></p>
+</footer>
+
+<script src="js/main.js"></script>

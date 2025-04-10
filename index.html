@@ -4,66 +4,80 @@
 <head>
     <link rel="icon" type="image/x-icon" href="/images/logo.ico">
     <meta charset="UTF-8">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="-1">
-    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE" >
-
-    <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="css/navbar.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="src/output.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
 <title>Bassem Meghiche</title>
 </head>
 
-<body>
-    <nav>
-        <navbar>
-            <ul>
-                <a href="index">Accueil</a>
-                <a href="parcours">Parcours</a>
-                <a href="contact">Contact</a>
-            </ul>
-        </navbar>
-    </nav>
-    <main>  
-        <div class="flex flex-col items-center justify-center min-h-screen space-y-8 px-4 text-center">
-            <div>
-              <h1 class="text-3xl sm:text-4xl font-bold mb-2">BASSEM MEGHICHE</h1>
-              <h2 class="text-lg sm:text-xl text-gray-700">
-                Étudiant en première année de BUT MMI<br>
-                à l’IUT de Cergy Pontoise - Antenne de Sarcelles
-              </h2>
-            </div>
-          
-            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <a href="mailto:bmeghiche06@gmail.com" class="flex items-center space-x-2 text-gray-800 hover:text-blue-600">
-                <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png" alt="Gmail" class="w-6 h-6">
-                <span>bmeghiche06@gmail.com</span>
-              </a>
-          
-              <a href="https://www.linkedin.com/in/b4ssem/" class="flex items-center space-x-2 text-gray-800 hover:text-blue-600">
-                <img src="images/linkedin.png" alt="LinkedIn" class="w-6 h-6">
-                <span>/in/b4ssem/</span>
-              </a>
-          
-              <a href="https://github.com/b4ssem?tab=repositories" class="flex items-center space-x-2 text-gray-800 hover:text-blue-600">
-                <img src="images/github.png" alt="GitHub" class="w-6 h-6">
-                <span>github.com/b4ssem</span>
-              </a>
-            </div>
-          
-            <div>
-              <a href="pdf/Bassem MEGHICHE.pdf" target="_blank"
-                 class="px-[30px] py-[16px] bg-blue-600 text-white font-semibold text-lg shadow-md rounded transition-all duration-200 hover:px-[35px] hover:bg-blue-500 hover:shadow-[0_15px_20px_rgba(59,130,246,0.2)]">
-                Télécharger mon CV
-              </a>
-            </div>
-          </div>
-        
-    </main>
-</body>
-<div class="footertext">
-    <p>© 2025 par <span class="footername">Bassem MEGHICHE</span></p>
-</div>
+<body class="flex flex-col min-h-screen">
+  <nav class="bg-white shadow-md px-4 py-3">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="text-xl font-bold text-blue-600">B4ssem</div>
+  
+      <input type="checkbox" id="menu-toggle" class="hidden peer" />
+      <label for="menu-toggle" class="sm:hidden cursor-pointer">
+        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </label>
+  
+      <ul class="hidden peer-checked:flex sm:flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4 sm:mt-0 sm:items-center absolute sm:static top-16 left-0 w-full sm:w-auto bg-white sm:bg-transparent p-4 sm:p-0 shadow sm:shadow-none z-10">
+        <li><a href="index" class="block text-gray-800 hover:text-blue-600 transition">Accueil</a></li>
+        <li><a href="parcours" class="block text-gray-800 hover:text-blue-600 transition">Parcours</a></li>
+        <li><a href="projets" class="block text-gray-800 hover:text-blue-600 transition">Projets</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="flex flex-col items-center justify-center min-h-[calc(100vh-140px)] space-y-10 px-6 pt-10 text-center">
+      
+      <div>
+        <h1 class="text-4xl sm:text-2xl font-bold mb-3">BASSEM MEGHICHE</h1>
+        <h2 class="text-xl sm:text-base text-gray-700 leading-relaxed">
+          Étudiant en première année de BUT MMI<br>
+          à l’IUT de Cergy Pontoise - Antenne de Sarcelles
+        </h2>
+      </div>
+
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-5 w-full max-w-md">
+        <a href="mailto:bmeghiche06@gmail.com"
+           class="flex items-center gap-2 text-lg sm:text-sm hover:text-blue-600">
+          <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png"
+               alt="Gmail" class="w-6 h-6 sm:w-5 sm:h-5">
+          <span>bmeghiche06@gmail.com</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/b4ssem/"
+           class="flex items-center gap-2 text-lg sm:text-sm hover:text-blue-600">
+          <img src="images/linkedin.png" alt="LinkedIn" class="w-6 h-6 sm:w-5 sm:h-5">
+          <span>/in/b4ssem/</span>
+        </a>
+
+        <a href="https://github.com/b4ssem?tab=repositories"
+           class="flex items-center gap-2 text-lg sm:text-sm hover:text-blue-600">
+          <img src="images/github.png" alt="GitHub" class="w-6 h-6 sm:w-5 sm:h-5">
+          <span>github.com/b4ssem</span>
+        </a>
+      </div>
+
+      <div>
+        <a href="pdf/Bassem MEGHICHE.pdf" target="_blank"
+           class="px-7 py-4 bg-blue-600 text-white font-semibold text-xl sm:text-base shadow-md rounded transition-all duration-200 hover:px-8 hover:bg-blue-500 hover:shadow-[0_15px_20px_rgba(59,130,246,0.2)]">
+          Télécharger mon CV
+        </a>
+      </div>
+    </div>
+  </main>
+  </body>
+
+  <footer class="mt-auto py-4 text-center text-sm text-gray-500">
+    <p>© 2025 par <span class="font-semibold text-gray-700">Bassem MEGHICHE</span></p>
+  </footer>
+
+
 <script src="js/main.js"></script>

@@ -4,49 +4,83 @@
 <head>
     <link rel="icon" type="image/x-icon" href="/images/logo.ico">
     <meta charset="UTF-8">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="-1">
-    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE" >
-    
-    <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="css/navbar.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="src/output.css" rel="stylesheet">
-    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <title>Bassem Meghiche</title>
+    <style>
+        @layer utilities {
+          .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+          }
+    
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        }
+      </style>
 </head>
 
-<body>
-    <nav>
-        <navbar>    
-            <ul>
-                <a href="index">Accueil</a>
-                <a href="parcours">Parcours</a>
-                <a href="contact">Contact</a>
-            </ul>
-        </navbar>
-    </nav>
-    <div class="contents">
-        <div class="box">
-            <h3>BUT MMI IUT de Cergy-Pontoise - Site de Sarcelles</h3>
-            <h4>2024-2027</h4>
-            <ul>
-                <li>Parcours développement web</li>
-                <li>Acquisition de compétences telles que la création de supports de communication numérique, le développement web, la gestion de projets et la conception multimédia</li>
-            </ul>
+
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <nav class="bg-white shadow-md px-4 py-3">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+          <div class="text-xl font-bold text-blue-600">B4ssem</div>
+      
+          <input type="checkbox" id="menu-toggle" class="hidden peer" />
+          <label for="menu-toggle" class="sm:hidden cursor-pointer">
+            <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </label>
+      
+          <ul class="hidden peer-checked:flex sm:flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4 sm:mt-0 sm:items-center absolute sm:static top-16 left-0 w-full sm:w-auto bg-white sm:bg-transparent p-4 sm:p-0 shadow sm:shadow-none z-10">
+            <li><a href="index" class="block text-gray-800 hover:text-blue-600 transition">Accueil</a></li>
+            <li><a href="parcours" class="block text-gray-800 hover:text-blue-600 transition">Parcours</a></li>
+            <li><a href="projets" class="block text-gray-800 hover:text-blue-600 transition">Projets</a></li>
+          </ul>
         </div>
-        <hr>
-        <div class="box"></div>
-            <h3>BAC Général - Lycée Jean Jacques Rousseau (Montmorency)</h3>
-            <h4>2021-2024</h4>
-            <ul>
-                <li>Spécialités NSI et LLCER</li>
-                <li>Mention Assez bien</li>
-            </ul>
-        </div>
-    </div>
-</body>
-<div class="footertext">
-    <p>© 2025 par <span class="footername">Bassem MEGHICHE</span></p>
-</div>
+      </nav>
+  
+
+    <main class="max-w-3xl mx-auto p-6 flex flex-col gap-6">
+  
+      <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600 fade-in">
+        <h3 class="text-xl font-bold mb-2">BUT MMI - IUT de Cergy-Pontoise (Sarcelles)</h3>
+        <h4 class="text-gray-600 mb-3">2024 - 2027</h4>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>Parcours développement web</li>
+          <li>Création de supports de communication numérique</li>
+          <li>Développement web, gestion de projets, conception multimédia</li>
+        </ul>
+      </div>
+  
+      <hr class="border-gray-300">
+  
+      <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600 fade-in">
+        <h3 class="text-xl font-bold mb-2">BAC Général - Lycée Jean Jacques Rousseau (Montmorency)</h3>
+        <h4 class="text-gray-600 mb-3">2021 - 2024</h4>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>Spécialités NSI et LLCER</li>
+          <li>Mention Assez Bien</li>
+        </ul>
+      </div>
+  
+    </main>
+  
+  </body>
+<footer class="mt-auto py-4 text-center text-sm text-gray-500">
+    <p>© 2025 par <span class="font-semibold text-gray-700">Bassem MEGHICHE</span></p>
+</footer>
 
 <script src="js/main.js"></script>
