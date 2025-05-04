@@ -12,13 +12,14 @@
 </head>
 
 <body class="flex flex-col min-h-screen ">
-  <nav class="flex justify-between items-center w-full lg:max-w-5xl sm:px-6 px-4 mx-auto mx-8 h-16 bg-white">
+  <nav class="flex justify-between items-center w-full max-w-5xl h-16 bg-white px-4 sm:px-6 sm:mx-auto">
     <div>
-      <a href="#" class="text-base font-semibold text-blue-600">B4ssem</a>
+      <a href="#" class="text-base font-semibold text-black">B4ssem</a>
     </div>
     <div class="nav bd-grid">
       <ul class="flex justify-end gap-6 text-base font-semibold text-gray-700">
         <a href="index" class="hover:text-blue-600">Accueil</a>
+        <a href="experiences" class="hover:text-blue-600">Expériences</a>
         <a href="parcours" class="hover:text-blue-600">Parcours</a>
         <a href="projets" class="hover:text-blue-600">Projets</a>
       </ul>
@@ -26,7 +27,9 @@
   </nav>
 
   <main>
-    <section class="w-full lg:max-w-5xl mx-auto px-4 items-center space-y-10 text-center">
+    <section class="w-full max-w-5xl mx-auto px-4 pt-12 grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+
+      <div class="space-y-10 text-left">
         <div>
           <h1 class="text-4xl sm:text-2xl font-bold mb-3">BASSEM MEGHICHE</h1>
           <h2 class="text-xl sm:text-base text-gray-700">
@@ -34,31 +37,31 @@
             à l’IUT de Cergy Pontoise - Antenne de Sarcelles
           </h2>
         </div>
-  
-        <div class="flex gap-2 justify-center">
-          <a href="mailto:bmeghiche06@gmail.com"
-             class="flex items-center gap-2">
-            <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png"
-                 alt="Gmail" class="w-6 h-6 sm:w-5 sm:h-5">
-          </a>
-  
-          <a target="_blank" href="https://www.linkedin.com/in/b4ssem/"
-             class="flex items-center gap-2">
-            <img src="images/linkedin.png" alt="LinkedIn" class="w-6 h-6 sm:w-5 sm:h-5">
-          </a>
-  
-          <a target="_blank" href="https://github.com/b4ssem?tab=repositories"
-             class="flex items-center gap-2">
-            <img src="images/github.png" alt="GitHub" class="w-6 h-6 sm:w-5 sm:h-5">
-          </a>
-        </div>
-  
+
         <div>
-          <a target="_blank" href="pdf/Bassem MEGHICHE.pdf" target="_blank"
-             class="px-7 py-4 bg-blue-600 text-white font-semibold text-xl sm:text-base shadow-md rounded transition-all duration-200 hover:px-8 hover:bg-blue-500 hover:shadow-[0_15px_20px_rgba(59,130,246,0.2)]">
+          <a target="_blank" href="pdf/Bassem MEGHICHE.pdf"
+             class="px-7 py-4 bg-black text-white font-semibold text-xl sm:text-base shadow-md rounded transition-all duration-200 hover:bg-gray-700 hover:shadow-[0_15px_20px_rgba(59,130,246,0.2)]">
             Télécharger mon CV
           </a>
         </div>
+    
+        <div class="flex md:pt-12 gap-2">
+          <a href="mailto:bmeghiche06@gmail.com" class="flex items-center gap-2">
+            <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png" alt="Gmail" class="w-6 h-6 sm:w-5 sm:h-5">
+          </a>
+          <a target="_blank" href="https://www.linkedin.com/in/b4ssem/" class="flex items-center gap-2">
+            <img src="images/linkedin.png" alt="LinkedIn" class="w-6 h-6 sm:w-5 sm:h-5">
+          </a>
+          <a target="_blank" href="https://github.com/b4ssem?tab=repositories" class="flex items-center gap-2">
+            <img src="images/github.png" alt="GitHub" class="w-6 h-6 sm:w-5 sm:h-5">
+          </a>
+        </div>
+      </div>
+
+      <div class="flex justify-center md:justify-end">
+        <img src="https://files.catbox.moe/pukxuw.png" alt="Illustration"
+             class="w-[300px] sm:w-[250px] md:w-[320px] rounded-full object-cover">
+      </div>
     </section>
   </main>
 </body>
