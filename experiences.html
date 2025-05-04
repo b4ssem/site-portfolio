@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <link rel="icon" type="image/x-icon" href="/images/logo.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="src/output.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Expériences - Bassem Meghiche</title>
+    <style>
+        @layer utilities {
+          .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+          }
+    
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        }
+      </style>
+</head>
+
+
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <nav class="bg-white shadow px-4 py-4">
+        <ul class="flex justify-right gap-6 text-base font-semibold text-gray-700">
+          <a href="index" class="hover:text-blue-600">Accueil</a>
+          <a href="experiences" class="hover:text-blue-600">Expériences</a>
+          <a href="parcours" class="hover:text-blue-600">Parcours</a>
+          <a href="projets" class="hover:text-blue-600">Projets</a>
+        </ul>
+      </nav>
+  
+
+    <main class="max-w-3xl mx-auto p-6 flex flex-col gap-6">
+  
+      <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-600 fade-in">
+        <h3 class="text-xl font-bold mb-2">SGS Multilab - CDD</h3>
+        <h4 class="text-gray-600 mb-3">Juillet 2024 à Août 2024</h4>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>Déballage de divers échantillons destinés à
+            l’analyse <br>(eaux, sols, bitumes, air, et déchets)</li>
+          <li>Revue de contrat</li>
+          <li>Étiquetage, aliquotage et distribution des
+            échantillons</li>
+        </ul>
+      </div>
+  
+      <hr class="border-gray-300">
+  
+    </main>
+  
+  </body>
+<footer class="mt-auto py-4 text-center text-sm text-gray-500">
+    <p>© 2025 par <span class="font-semibold text-gray-700">Bassem MEGHICHE</span></p>
+</footer>
+
+<script src="js/main.js"></script>
