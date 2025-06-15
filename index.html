@@ -12,19 +12,34 @@
 </head>
 
 <body class="flex flex-col min-h-screen ">
-  <nav class="flex justify-between items-center w-full max-w-5xl h-16 bg-white px-4 sm:px-6 sm:mx-auto">
-    <div>
-      <a href="#" class="text-base font-semibold text-black">B4ssem</a>
-    </div>
-    <div class="nav bd-grid">
-      <ul class="flex justify-end gap-6 text-base font-semibold text-gray-700">
-        <a href="index" class="hover:text-blue-600">Accueil</a>
-        <a href="experiences" class="hover:text-blue-600">Expériences</a>
-        <a href="parcours" class="hover:text-blue-600">Parcours</a>
-        <a href="projets" class="hover:text-blue-600">Projets</a>
-      </ul>
-    </div>
-  </nav>
+  <nav class="w-full max-w-5xl bg-white px-4 sm:px-6 sm:mx-auto flex items-center justify-between h-16 relative">
+  <!-- Logo -->
+  <div>
+    <a href="#" class="text-base font-semibold text-black">B4ssem</a>
+  </div>
+
+  <!-- Hamburger toggle (checkbox hidden) -->
+  <input type="checkbox" id="menu-toggle" class="peer hidden" />
+
+  <!-- Hamburger icon (label) -->
+  <label for="menu-toggle" class="sm:hidden cursor-pointer z-50">
+    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"
+         viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </label>
+
+  <!-- Navigation links -->
+  <ul class="hidden peer-checked:flex flex-col sm:flex sm:flex-row gap-4 sm:gap-6 absolute sm:static top-full left-0 w-full sm:w-auto bg-white sm:bg-transparent p-4 sm:p-0 shadow sm:shadow-none z-40">
+    <li><a href="index" class="block text-base font-semibold text-gray-700 hover:text-blue-600">Accueil</a></li>
+    <li><a href="experiences" class="block text-base font-semibold text-gray-700 hover:text-blue-600">Expériences</a></li>
+    <li><a href="parcours" class="block text-base font-semibold text-gray-700 hover:text-blue-600">Parcours</a></li>
+    <li><a href="projets" class="block text-base font-semibold text-gray-700 hover:text-blue-600">Projets</a></li>
+  </ul>
+</nav>
+
+
 
   <main>
     <section class="w-full max-w-5xl mx-auto px-4 pt-12 grid grid-cols-1 md:grid-cols-2 items-center gap-10">
