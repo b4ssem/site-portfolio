@@ -7,53 +7,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="src/output.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @layer utilities {
+          .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+          }
+    
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        }
+
+        .reveal {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .reveal.active {
+          opacity: 1;
+          transform: translateY(0);
+  }
+      </style>
 
 <title>Bassem Meghiche</title>
 </head>
 
 <body class="flex flex-col min-h-screen ">
-  <nav class="w-full max-w-5xl bg-white px-4 sm:px-6 sm:mx-auto flex items-center justify-between h-16 relative">
-  <div>
-    <a href="#" class="text-base font-semibold text-black">B4ssem</a>
-  </div>
-
-  <button id="burger-btn" class="sm:hidden cursor-pointer z-50" aria-label="Toggle menu">
-    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"
-         viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round"
-            d="M4 6h16M4 12h16M4 18h16" />
-    </svg>
-  </button>
-
-  <ul id="menu" class="hidden sm:flex flex-col sm:flex-row gap-4 sm:gap-6 absolute sm:static top-full left-0 w-full sm:w-auto bg-white sm:bg-transparent p-4 sm:p-0 shadow sm:shadow-none z-40">
-    <li><a href="index" class="block text-base font-semibold text-gray-700 hover:text-blue-600">Accueil</a></li>
-    <li><a href="experiences" class="block text-base font-semibold text-gray-700 hover:text-blue-600">Expériences</a></li>
-    <li><a href="parcours" class="block text-base font-semibold text-gray-700 hover:text-blue-600">Parcours</a></li>
-    <li><a href="projets" class="block text-base font-semibold text-gray-700 hover:text-blue-600">Projets</a></li>
-  </ul>
-
-  <script>
-    const burgerBtn = document.getElementById('burger-btn');
-    const menu = document.getElementById('menu');
-
-    burgerBtn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-
-    menu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        if(window.innerWidth < 640) {
-          menu.classList.add('hidden');
-        }
-      });
-    });
-  </script>
-</nav>
+  <?php require_once('navbar.php'); ?>
 
 
 
   <main>
-    <section class="w-full max-w-5xl mx-auto px-4 pt-12 grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+    <section id="home" class=" reveal w-full max-w-5xl mx-auto px-4 pt-24 pb-12 md:pt-72 md:pb-72 grid grid-cols-1 md:grid-cols-2 items-center gap-10">
 
       <div class="space-y-10 text-left">
         <div>
@@ -89,6 +82,19 @@
              class="w-[300px] sm:w-[250px] md:w-[320px] rounded-full object-cover">
       </div>
     </section>
+
+    <section id="experiences" class="reveal w-full max-w-5xl mx-auto px-4 pt-24 grid items-center gap-10">
+      <?php require_once('experiences.php'); ?>
+    </section>
+
+    <section id="parcours" class="reveal w-full max-w-5xl mx-auto px-4 pt-24 grid items-center gap-10">
+      <?php require_once('parcours.php'); ?>
+    </section>
+
+    <section id="projets" class="reveal w-full max-w-5xl mx-auto px-4 pt-24 grid items-center">
+      <?php require_once('projets.php'); ?>
+    </section>
+
   </main>
 </body>
 

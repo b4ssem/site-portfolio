@@ -6,4 +6,4 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-RewriteRule ^([a-zA-Z0-9_-]+)$ $1.html [L]
+RewriteRule ^([a-zA-Z0-9_-]+)$ $1.php [L]
