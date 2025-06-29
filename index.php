@@ -8,33 +8,28 @@
     <link href="src/output.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        @layer utilities {
-          .fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
-          }
-    
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
-              transform: translateY(30px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-        }
-
-        .reveal {
+        .reveal1 {
           opacity: 0;
-          transform: translateY(30px);
-          transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+          transform: translateX(-30px);
+          transition: opacity 1s ease-out, transform 1s ease-out;
         }
 
-        .reveal.active {
+        .reveal1.active {
           opacity: 1;
-          transform: translateY(0);
+          transform: translateX(0);
   }
+
+        .reveal2 {
+          opacity: 0;
+          transform: translateX(30px);
+          transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .reveal2.active {
+          opacity: 1;
+          transform: translateX(0);
+  }
+
       </style>
 
 <title>Bassem Meghiche</title>
@@ -46,7 +41,7 @@
 
 
   <main>
-    <section id="home" class=" reveal w-full max-w-5xl mx-auto px-4 pt-24 pb-12 md:pt-72 md:pb-72 grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+    <section id="home" class=" reveal1 w-full max-w-5xl mx-auto px-4 pt-24 pb-12 md:pt-72 md:pb-72 grid grid-cols-1 md:grid-cols-2 items-center gap-10">
 
       <div class="space-y-10 text-left">
         <div>
@@ -83,15 +78,15 @@
       </div>
     </section>
 
-    <section id="experiences" class="reveal w-full max-w-5xl mx-auto px-4 pt-24 grid items-center gap-10">
+    <section id="experiences" class="reveal2 w-full max-w-5xl mx-auto px-4 pt-24 grid items-center gap-10">
       <?php require_once('experiences.php'); ?>
     </section>
 
-    <section id="parcours" class="reveal w-full max-w-5xl mx-auto px-4 pt-24 grid items-center gap-10">
+    <section id="parcours" class="reveal1 w-full max-w-5xl mx-auto px-4 pt-24 grid items-center gap-10">
       <?php require_once('parcours.php'); ?>
     </section>
 
-    <section id="projets" class="reveal w-full max-w-5xl mx-auto px-4 pt-24 grid items-center">
+    <section id="projets" class="reveal2 w-full max-w-5xl mx-auto px-4 pt-24 grid items-center">
       <?php require_once('projets.php'); ?>
     </section>
 
