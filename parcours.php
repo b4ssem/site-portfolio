@@ -1,6 +1,29 @@
+<style>
+        .reveal1 {
+          opacity: 0;
+          transform: translateX(-30px);
+          transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .reveal1.active {
+          opacity: 1;
+          transform: translateX(0);
+  }
+  .reveal2 {
+          opacity: 0;
+          transform: translateY(-30px);
+          transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .reveal2.active {
+          opacity: 1;
+          transform: translateY(0);
+  }
+      </style>
+
 <h1 class="text-3xl font-bold text-left mb-6">Mon Parcours</h1>
   
-      <div class="bg-white p-6 rounded-lg shadow-md fade-in flex gap-4 items-start">
+      <div class="reveal1 bg-white p-6 rounded-lg shadow-md fade-in flex gap-4 items-start">
   <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/CY_Cergy_Paris_Universite_-_Logo.png"
        alt="Logo IUT Cergy"
        class="w-14 h-14 object-contain rounded-full border border-gray-300 shadow" />
@@ -20,7 +43,7 @@
 
 <hr class="border-gray-200">
 
-<div class="bg-white p-6 rounded-lg shadow-md fade-in flex gap-4 items-start">
+<div class="reveal1 bg-white p-6 rounded-lg shadow-md fade-in flex gap-4 items-start">
   <img src="https://lyc-rousseau-montmorency.ac-versailles.fr/wp-content/uploads/sites/482/2020/06/taille-6.png"
        alt="Logo Lycée JJ Rousseau"
        class="w-14 h-14 object-contain rounded-full border border-gray-300 shadow" />

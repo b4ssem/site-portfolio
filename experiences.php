@@ -1,6 +1,31 @@
+<style>
+        .reveal1 {
+          opacity: 0;
+          transform: translateX(-30px);
+          transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .reveal1.active {
+          opacity: 1;
+          transform: translateX(0);
+  }
+
+        .reveal2 {
+          opacity: 0;
+          transform: translateY(-30px);
+          transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .reveal2.active {
+          opacity: 1;
+          transform: translateY(0);
+  }
+
+      </style>
+
 <h1 class="text-3xl font-bold text-left mb-6">Mes Expériences</h1>
   
-      <div class="flex gap-4 items-start bg-white shadow-md fade-in rounded-xl p-5">
+      <div class="reveal1 flex gap-4 items-start bg-white shadow-md fade-in rounded-xl p-5">
     <div class="flex-shrink-0">
       <img src="https://upload.wikimedia.org/wikipedia/fr/a/a0/SGS_LOGO.svg" alt="SGS Logo" class="w-14 h-14 object-contain border border-gray-300 rounded-full shadow" />
     </div>
