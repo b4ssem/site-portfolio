@@ -99,7 +99,7 @@
 </body>
 
   <footer class="mt-auto py-4 text-center text-sm text-gray-500">
-    <p>© 2025 par <span class="font-semibold text-gray-700">Bassem MEGHICHE</span></p>
+    <p class="font-medium text-black">© 2025 par <span class="font-bold text-black">Bassem MEGHICHE</span></p>
   </footer>
 
 

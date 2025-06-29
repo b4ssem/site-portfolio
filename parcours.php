@@ -7,7 +7,7 @@
 
   <div class="flex flex-col gap-2">
     <div>
-      <h3 class="text-lg font-semibold text-gray-800">BUT Métiers du Multimédia et de l'Internet</h3>
+      <h2 class="text-lg font-semibold text-gray-800">BUT Métiers du Multimédia et de l'Internet</h3>
       <p class="text-sm text-gray-600">IUT Cergy-Pontoise</p>
       <p class="text-sm text-gray-500">2024 - 2027</p>
     </div>

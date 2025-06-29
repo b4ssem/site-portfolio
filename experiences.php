@@ -7,7 +7,7 @@
 
     <div class="flex flex-col gap-2">
       <div>
-        <h3 class="text-lg font-semibold text-gray-800">Employé expédition réception</h3>
+        <h2 class="text-lg font-semibold text-gray-800">Employé expédition réception</h3>
         <p class="text-sm text-gray-600">SGS · CDD</p>
         <p class="text-sm text-gray-500">juil. 2024 - août 2024 · 2 mois</p>
         <p class="text-sm text-gray-500">Évry-Courcouronnes, Île-de-France, France · Sur site</p>
