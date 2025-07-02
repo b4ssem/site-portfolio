@@ -13,8 +13,7 @@
           transform: translateX(-30px);
           transition: opacity 1s ease-out, transform 1s ease-out;
         }
-
-        .reveal1.active {
+        
           opacity: 1;
           transform: translateX(0);
   }
