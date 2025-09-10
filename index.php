@@ -1,14 +1,6 @@
-<?php
-require_once('./ressources/includes/connexion-bdd.php');
-
-$requete_brute = "SELECT * FROM article";
-$resultat_brut = mysqli_query($mysqli_link, $requete_brute);
-?>
 <!doctype html>
 <html lang="fr">
-
 <head>
-    <base href="/<?php echo $_ENV['CHEMIN_BASE']; ?>">
 
     <link rel="icon" type="image/x-icon" href="/images/logo.ico">
     <meta charset="UTF-8">
@@ -52,9 +44,13 @@ $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
       <div class="space-y-10 text-left">
         <div>
           <h1 class="text-4xl sm:text-2xl font-bold mb-3">BASSEM MEGHICHE</h1>
-          <h2 class="text-xl sm:text-base text-gray-700">
+          <h2 class="text-xl sm:text-base text-gray-700 mb-3">
             Étudiant en première année de BUT MMI<br>
             à l’IUT de Cergy Pontoise - Antenne de Sarcelles
+          </h2>
+          <h2 class="text-xl sm:text-base text-gray-700 font-bold">
+            À la recherche d’un stage de 10 à 12 semaines<br>
+            à partir de mi-avril 2026
           </h2>
         </div>
 
@@ -95,36 +91,6 @@ $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
     <section id="projets" class="reveal2 w-full max-w-5xl mx-auto px-4 pt-24 grid items-center">
       <?php require_once('projets.php'); ?>
     </section>
-    <section class="liste-articles">
-                <?php while ($article = mysqli_fetch_array($resultat_brut)) {
-                    $date_creation = new DateTime($article["date_creation"]);
-                ?>
-                    <!--
-                        @note
-                        Nous avons passé un paramètre d'URL GET nommé "id".
-                        Ainsi quand l'utilisateur va arriver sur la page "article.php",
-                        elle va recevoir la valeur envoyée dans l'URL.
-                        Vous pourrez récupérer la valeur en php grâce à $_GET["id"]
-                     -->
-                        <a href="article.php?id=<?php echo $article["id"]; ?>" class='article' id="<?php echo $article["id"]; ?>">
-                            <div>
-                                <img src='ressources/images/image-article.png' alt=''>
-                            </div>
-                            <section class='textes'>
-                                <h2 class='titre'>
-                                    <?php echo $article["titre"]; ?>
-                                </h2>
-                                <p class='description'>
-                                    <?php echo $article["chapo"]; ?>
-                                </p>
-                                <p class="date">Publié le <time datetime="<?php echo $date_creation->format('d/m/Y H:i:s'); ?>">
-                                            <?php echo $date_creation->format('d/m/Y à H:i:s'); ?>
-                                        </time>
-                                </p>
-                            </section>
-                        </a>
-                <?php } ?>
-            </section>
 
   </main>
 </body>
