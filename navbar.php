@@ -1,9 +1,10 @@
 <nav class="fixed top-0 left-0 right-0 z-50 bg-white">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
     <div>
-      <a href="#" class="text-base font-semibold text-black">B4ssem</a>
+      <a href="#" class="h-auto flex items-center">
+        <img src="images/logo-b4ssem.png" alt="logo B4ssem" class="max-h-14 sm:max-h-12">
+      </a>
     </div>
-
     <button id="burger-btn" class="sm:hidden cursor-pointer z-50" aria-label="Toggle menu">
       <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"
            viewBox="0 0 24 24">
