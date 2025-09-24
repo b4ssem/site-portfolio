@@ -1,7 +1,13 @@
 <!doctype html>
 <html lang="fr">
 <head>
-
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5KN8DM39');</script>
+<!-- End Google Tag Manager -->
     <link rel="icon" type="image/x-icon" href="/images/logo.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,6 +40,10 @@
 </head>
 
 <body class="flex flex-col min-h-screen ">
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5KN8DM39"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
   <?php require_once('navbar.php'); ?>
 
 
@@ -45,12 +55,12 @@
         <div>
           <h1 class="text-4xl sm:text-2xl font-bold mb-3">BASSEM MEGHICHE</h1>
           <h2 class="text-xl sm:text-base text-gray-700 mb-3">
-            Étudiant en première année de BUT MMI<br>
+            Étudiant en deuxième année de BUT MMI<br>
             à l’IUT de Cergy Pontoise - Antenne de Sarcelles
           </h2>
           <h2 class="text-xl sm:text-base text-gray-700 font-bold">
             À la recherche d’un stage de 10 à 12 semaines<br>
-            à partir de mi-avril 2026
+            à partir du 13 avril 2026
           </h2>
         </div>
 
@@ -88,8 +98,8 @@
       <?php require_once('parcours.php'); ?>
     </section>
 
-    <section id="projets" class="reveal2 w-full max-w-5xl mx-auto px-4 pt-24 grid items-center">
-      <?php require_once('projets.php'); ?>
+    <section id="posts" class="reveal2 w-full max-w-6xl mx-auto px-4 pt-24">
+      <?php require_once('posts.php'); ?>
     </section>
 
   </main>

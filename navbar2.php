@@ -1,7 +1,7 @@
 <nav class="fixed top-0 left-0 right-0 z-50 bg-white">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
     <div>
-      <a href="#" class="text-base font-semibold text-black">B4ssem</a>
+      <a href="index" class="text-base font-semibold text-black">B4ssem</a>
     </div>
 
     <button id="burger-btn" class="sm:hidden cursor-pointer z-50" aria-label="Toggle menu">
@@ -11,13 +11,6 @@
               d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
-
-    <ul id="menu" class="hidden sm:flex flex-col sm:flex-row gap-4 sm:gap-6 absolute sm:static top-full left-0 w-full sm:w-auto bg-white sm:bg-transparent p-4 sm:p-0 shadow sm:shadow-none z-40">
-      <li><a href="#" class="block text-base font-semibold text-gray-700 hover:text-blue-600">Accueil</a></li>
-      <li><a href="#experiences" class="block text-base font-semibold text-gray-700 hover:text-blue-600">Expériences</a></li>
-      <li><a href="#parcours" class="block text-base font-semibold text-gray-700 hover:text-blue-600">Parcours</a></li>
-      <li><a href="#posts" class="block text-base font-semibold text-gray-700 hover:text-blue-600">Articles</a></li>
-    </ul>
   </div>
 </nav>
 
