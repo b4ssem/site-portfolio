@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — Bento layout</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/5ab3b4642a.js" crossorigin="anonymous"></script>
+  <style>
+    /* CORRECTION : On bloque le scroll horizontal sur le body uniquement */
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    body { font-family: 'Montserrat', sans-serif; }
+    .bento-grid { grid-auto-rows: auto; }
+    .glass { background: linear-gradient(135deg, rgba(0,0,0,0.02), rgba(0,0,0,0.01)); backdrop-filter: blur(6px); }
+
+    /* Reveal animations */
+    .reveal, .reveal-down, .reveal-left, .reveal-right, .reveal-zoom, .reveal-rotate {
+      opacity: 0;
+      transition: all 0.7s ease;
+    }
+    .reveal { transform: translateY(20px); }
+    .reveal-down { transform: translateY(-20px); }
+    .reveal-left { transform: translateX(-20px); }
+    
+    /* IMPORTANT : On réduit l'animation vers la droite pour éviter les bugs mobile */
+    .reveal-right { transform: translateX(10px); }
+    
+    .reveal-zoom { transform: scale(0.8); }
+    .reveal-rotate { transform: rotate(-15deg) scale(0.8); }
+
+    .visible.reveal, .visible.reveal-down, .visible.reveal-left,
+    .visible.reveal-right, .visible.reveal-zoom, .visible.reveal-rotate {
+      transform: none;
+      opacity: 1;
+    }
+</style>
+</head>
+<body class="bg-white text-gray-900 antialiased overflow-x-hidden">
+
+<header class="fixed w-full bg-white shadow z-50">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+
+    <a href="#" class="text-xl font-semibold tracking-tight">B4ssem</a>
+
+    <nav class="hidden md:flex space-x-4">
+      <a href="#projects" class="text-sm hover:underline">Projets</a>
+      <a href="#about" class="text-sm hover:underline">À propos</a>
+      <a href="#about" class="text-sm hover:underline">Contact</a>
+    </nav>
+
+    <button id="menu-btn" aria-label="Hamburger navbar" class="md:hidden flex flex-col gap-1.5 focus:outline-none z-50">
+      <span class="hamburger-line w-6 h-0.5 bg-black transition-all duration-300 origin-center"></span>
+      <span class="hamburger-line w-6 h-0.5 bg-black transition-all duration-300 origin-center"></span>
+      <span class="hamburger-line w-6 h-0.5 bg-black transition-all duration-300 origin-center"></span>
+    </button>
+  </div>
+
+  <nav id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-md flex-col px-6 py-4 space-y-4 md:hidden border-t border-gray-100">
+    <a href="#projects" class="mobile-link block text-sm font-medium hover:text-indigo-600">Projets</a>
+    <a href="#about" class="mobile-link block text-sm font-medium hover:text-indigo-600">À propos</a>
+    <a href="#about" class="mobile-link block text-sm font-medium hover:text-indigo-600">Contact</a>
+  </nav>
+</header>
+
+<main class="pt-24 max-w-6xl px-4 md:pt-0 md:px-6 md:mx-auto pb-12">
+
+  <!-- Hero Section -->
+  <section class="flex flex-col md:flex-row items-center gap-6 mb-12 reveal-rotate md:min-h-screen flex flex-col justify-center gap-6">
+	<div class=" reveal-rotate glass rounded-2xl p-8 shadow-xl border border-gray-200">
+      <div class="md:flex md:items-center md:gap-8">
+        <div class="flex-shrink-0 mb-6 md:mb-0">
+          <img src="documents/IMG-20251108-WA00122.jpg" alt="avatar"
+               class="w-60 h-60 rounded-full object-cover ring-1 ring-gray-300" />
+        </div>
+        <div>
+          <h1 class="text-3xl md:text-4xl font-bold uppercase">Bassem Meghiche </h1>
+          <p class="mt-2 text-gray-600 max-w-2xl">Étudiant en deuxième année de BUT MMI à l’IUT de Cergy Pontoise - Antenne de Sarcelles</p>
+          <p class="mt-2 text-gray-600 font-medium">À la recherche d’un stage de 10 à 12 semaines à partir du 13 avril 2026</p>
+          <div class="mt-4 flex gap-3">
+            <a href="documents/Bassem MEGHICHE.pdf" class="inline-flex items-center px-4 py-2 rounded-lg bg-indigo-600 text-white text-sm shadow">Télécharger mon CV</a>
+            <a href="#about" class="inline-flex items-center px-4 py-2 rounded-lg border border-gray-300 text-sm">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Skills / Contact Section -->
+  <section id="about"class="grid grid-cols-1 pt-24 md:grid-cols-6 gap-4 mb-12 md:pt-24">
+    <aside class="reveal-zoom col-span-1 md:col-span-2 p-4 rounded-2xl shadow-lg glass border border-gray-200 ">
+      <h2 class="font-medium">À propos</h2>
+      <p class="text-sm text-gray-600 mt-2">Développeur web fullstack en formation (BUT2 MMI). J’aime concevoir des expériences simples et efficaces, du design à la logique serveur.</p>
+    </aside>
+
+    <article class="reveal-zoom col-span-1 md:col-span-2 p-4 rounded-2xl shadow-lg glass border border-gray-200">
+      <h2 class="text-sm font-medium">Compétences</h2>
+      <div class="mt-2 flex flex-wrap gap-2 text-xs text-gray-600">
+        <span class="px-2 py-1 border rounded">HTML</span>
+        <span class="px-2 py-1 border rounded">CSS</span>
+        <span class="px-2 py-1 border rounded">JS</span>
+        <span class="px-2 py-1 border rounded">PHP</span>
+        <span class="px-2 py-1 border rounded">SQL</span>
+        <span class="px-2 py-1 border rounded">Tailwind</span>
+        <span class="px-2 py-1 border rounded">SEO</span>
+        <span class="px-2 py-1 border rounded">Suite Adobe</span>
+        <span class="px-2 py-1 border rounded">Figma</span>
+      </div>
+    </article>
+
+    <article id="about" class="reveal-zoom col-span-1 md:col-span-2 p-4 rounded-2xl shadow-lg glass border border-gray-200">
+      <h2 class="font-medium">Contact</h2>
+      <p class="text-sm text-gray-600 mt-2">Envie de travailler ensemble ?</p>
+	  <i class="fa-solid fa-arrow-right inline"></i>
+      <a href="mailto:bmeghiche06@gmail.com" class="mt-3 inline-block text-sm underline">bmeghiche06@gmail.com</a>
+    </article>
+  </section>
+
+  <!-- Experiences Section -->
+  <section id="experiences" class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Mes Expériences</h2>
+    <div class="grid grid-cols-2 md:grid-cols-6 gap-4 bento-grid auto-rows-auto">
+      <!-- Exemple d'expérience -->
+      <article class="reveal-left col-span-2 md:col-span-4 p-4 rounded-2xl glass shadow-lg flex flex-col gap-2 border border-gray-200">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/HotelF1_logo.svg" alt="Hotel F1" class="w-14 h-14 object-contain rounded-full border mb-2">
+        <h3 class="text-lg font-bold">Employé polyvalent d'hôtellerie</h3>
+        <p class="text-sm text-gray-600">Hotel F1 · CDD</p>
+      </article>
+
+      <aside class="reveal-right col-span-2 md:col-span-2 row-span-2 p-4 rounded-2xl glass shadow-lg border border-gray-200">
+		<i class="fa-solid fa-circle-info inline"></i>
+        <h3 class="font-semibold">À propos</h3>
+        <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1 mt-2">
+          <li>Mise en place et service du petit-déjeuner</li>
+          <li>Accueil et orientation des clients</li>
+          <li>Service en salle et gestion des demandes clients</li>
+        </ul>
+		<div class="pt-4 mt-2 flex flex-wrap gap-2 text-xs text-gray-600">
+			<span class="px-2 py-1 border rounded">Accueil client</span>
+			<span class="px-2 py-1 border rounded">Service en salle</span>
+			<span class="px-2 py-1 border rounded">Organisation</span>
+			<span class="px-2 py-1 border rounded">Gestion du temps</span>
+			<span class="px-2 py-1 border rounded">Travail d’équipe</span>
+		</div>
+      </aside>
+
+      <article class="reveal-zoom col-span-1 md:col-span-2 p-4 rounded-2xl glass shadow-lg border border-gray-200">
+		<i class="fa-solid fa-calendar inline"></i>
+        <h4 class="text-sm font-medium">Période</h4>
+        <p class="text-xs text-gray-600 mt-1">juil. 2025 - août 2025</p>
+      </article>
+
+      <article class="reveal-zoom col-span-1 md:col-span-2 p-4 rounded-2xl glass shadow-lg border border-gray-200">
+		<i class="fa-solid fa-location-dot inline"></i>
+        <h4 class="text-sm font-medium">Localisation</h4>
+        <p class="text-xs text-gray-600 mt-1">Roissy en France, Île-de-France, France</p>
+      </article>
+
+		<div class="col-span-full my-1" bis_skin_checked="1">
+			<hr class="invisible">
+		</div>
+
+      <aside class="reveal-right col-span-1 md:col-span-2 row-span-1 p-4 rounded-2xl glass shadow-lg border border-gray-200">
+		<i class="fa-solid fa-circle-info inline"></i>
+        <h3 class="font-semibold">À propos</h3>
+        <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1 mt-2">
+          <li>Déballage de divers échantillons destinés à l'analyse (eaux, sols, bitumes, air et déchets)</li>
+          <li>Revue de contrat</li>
+          <li>Étiquetage, aliquotage et distribution des échantillons</li>
+        </ul>
+      </aside>
+
+	  <article class="reveal-left col-span-1 md:col-span-4 p-4 rounded-2xl glass shadow-lg flex flex-col gap-2 border border-gray-200">
+        <img src="https://upload.wikimedia.org/wikipedia/fr/a/a0/SGS_LOGO.svg" alt="Logo SGS" class="w-14 h-14 object-contain rounded-full border mb-2">
+        <h3 class="text-lg font-bold">Employé expédition réception</h3>
+        <p class="text-sm text-gray-600">SGS · CDD</p>
+        <p class="text-xs text-gray-600">juil. 2024 - août 2024</p>
+        <p class="text-xs text-gray-600">Évry-Courcouronnes, Île-de-France, France</p>
+      </article>
+
+      <article class="reveal-zoom col-span-2 md:col-span-6 row-span-1 p-4 rounded-2xl glass shadow-lg border border-gray-200">
+		<i class="fa-solid fa-lightbulb inline"></i>
+        <h4 class="text-sm font-medium">Compétences</h4>
+        <div class="pt-4 mt-2 md:mt-2 pt-0 flex flex-wrap gap-2 text-xs text-gray-600">
+			<span class="px-2 py-1 border rounded">Expédition et Réception</span>
+			<span class="px-2 py-1 border rounded">Étiquette en entreprise</span>
+			<span class="px-2 py-1 border rounded">Gestion du temps</span>
+			<span class="px-2 py-1 border rounded">Travail d’équipe</span>
+		</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Parcours Section -->
+  <section id="parcours" class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Mon Parcours</h2>
+    <div class="grid grid-cols-1 md:grid-cols-6 gap-4 bento-grid auto-rows-auto">
+
+	  <article class="reveal-left col-span-2 md:col-span-4 p-4 rounded-2xl glass shadow-lg flex flex-col gap-2 border border-gray-200">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/CY_Cergy_Paris_Universite_-_Logo.png" alt="Logo CY" class="w-14 h-14 object-contain rounded-full border mb-2">
+        <h3 class="text-lg font-bold">BUT Métiers du Multimédia et de l'Internet</h3>
+        <p class="text-sm text-gray-600">IUT Cergy-Pontoise</p>
+      </article>
+
+	  <aside class="reveal-right col-span-2 md:col-span-2 row-span-2 p-4 rounded-2xl glass shadow-lg border border-gray-200">
+		<i class="fa-solid fa-circle-info inline"></i>
+        <h3 class="font-semibold">À propos</h3>
+        <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1 mt-2">
+          <li>Programmation et intégration/développement web</li>
+          <li>Parcours développement web et médias interactifs</li>
+          <li>Audiovisuel, création numérique</li>
+        </ul>
+		<div class="pt-4 mt-2 md:mt-2 pt-0 flex flex-wrap gap-2 text-xs text-gray-600">
+			<span class="px-2 py-1 border rounded">Développement web</span>
+			<span class="px-2 py-1 border rounded">HTML</span>
+			<span class="px-2 py-1 border rounded">CSS</span>
+			<span class="px-2 py-1 border rounded">PHP</span>
+			<span class="px-2 py-1 border rounded">JS</span>
+			<span class="px-2 py-1 border rounded">SQL</span>
+			<span class="px-2 py-1 border rounded">Figma</span>
+			<span class="px-2 py-1 border rounded">Suite Adobe</span>
+		</div>
+      </aside>
+
+      <article class="reveal-zoom col-span-1 md:col-span-2 p-4 rounded-2xl glass shadow-lg border border-gray-200">
+		<i class="fa-solid fa-calendar inline"></i>
+        <h4 class="text-sm font-medium">Période</h4>
+        <p class="text-xs text-gray-600 mt-1">2024 - 2027</p>
+      </article>
+
+      <article class="reveal-zoom col-span-1 md:col-span-2 p-4 rounded-2xl glass shadow-lg border border-gray-200">
+		<i class="fa-solid fa-location-dot inline"></i>
+        <h4 class="text-sm font-medium">Localisation</h4>
+        <p class="text-xs text-gray-600 mt-1">Sarcelles, Île-de-France, France</p>
+      </article>
+
+	  <aside class="reveal-right col-span-2 md:col-span-2 row-span-1 p-4 rounded-2xl glass shadow-lg border border-gray-200 relative hover:z-40 transition-all">
+		<i class="fa-solid fa-circle-info inline"></i>
+        <h3 class="font-semibold">À propos</h3>
+        <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+							<li class="text-sm text-gray-600 mt-2">
+								Mention Assez Bien
+							</li>
+							<li class="text-sm text-gray-600 mt-2">
+								Bac Général Spécialités 
+
+								<!-- Tooltip NSI -->
+								<span class="relative group font-semibold text-gray-800 cursor-help">
+									NSI
+									<span class="absolute -top-10 left-1/2 -translate-x-1/2 
+												whitespace-nowrap text-xs 
+												bg-gray-900 text-white px-2 py-1 rounded 
+												opacity-0 group-hover:opacity-100 transition 
+												pointer-events-none shadow-lg">
+									Numérique et Sciences Informatiques
+									</span>
+								</span>
+
+								et 
+
+								<!-- Tooltip LLCE -->
+								<span class="relative group font-semibold text-gray-800 cursor-help">
+									LLCE
+									<span class="absolute -top-10 left-1/2 -translate-x-1/2 
+												whitespace-nowrap text-xs 
+												bg-gray-900 text-white px-2 py-1 rounded
+												opacity-0 group-hover:opacity-100 transition 
+												pointer-events-none shadow-lg">
+									Langues, Littératures et Cultures Étrangères
+									</span>
+								</span>
+
+								Anglais
+							</li>
+
+							<li class="text-sm text-gray-600 mt-2">
+								Option Sport
+							</li>
+						</ul>
+      </aside>
+
+	  <article class="reveal-left col-span-2 md:col-span-4 p-4 rounded-2xl glass shadow-lg flex flex-col gap-2 border border-gray-200">
+        <img src="https://lyc-rousseau-montmorency.ac-versailles.fr/wp-content/uploads/sites/482/2020/06/taille-6.png" alt="Logo JJR" class="w-14 h-14 object-contain rounded-full border mb-2">
+        <h3 class="text-lg font-bold">BAC Général</h3>
+        <p class="text-sm text-gray-600">Lycée Jean Jacques Rousseau</p>
+        <p class="text-xs text-gray-600">2021 - 2024</p>
+        <p class="text-xs text-gray-600">Montmorency, Île-de-France, France</p>
+      </article>
+
+      <article class="reveal-zoom col-span-2 md:col-span-6 row-span-1 p-4 rounded-2xl glass shadow-lg border border-gray-200">
+		<i class="fa-solid fa-lightbulb inline"></i>
+        <h4 class="text-sm font-medium">Compétences</h4>
+        <div class="pt-4 mt-2 md:mt-2 pt-0 flex flex-wrap gap-2 text-xs text-gray-600">
+			<span class="px-2 py-1 border rounded">Anglais C1</span>
+			<span class="px-2 py-1 border rounded">Python</span>
+			<span class="px-2 py-1 border rounded">Découverte HTML/CSS</span>
+			<span class="px-2 py-1 border rounded">Culture générale</span>
+			<span class="px-2 py-1 border rounded">Travail d’équipe</span>
+		</div>
+      </article>
+
+    </div>
+  </section>
+
+   <!-- Projets Section -->
+  <section id="projects" class="mb-12 pt-14">
+    <h2 class="text-2xl font-semibold mb-4">Projets</h2>
+    <div class="grid grid-cols-1 md:grid-cols-6 gap-4 bento-grid auto-rows-auto">
+      <article class="reveal col-span-1 md:col-span-4 row-span-2 p-4 rounded-2xl glass shadow-md border border-gray-200 flex flex-col justify-between">
+        <h3 class="text-lg font-bold">CV créatif</h3>
+        <p class="text-sm text-gray-600 mt-1">Réalisation de mon CV avec une mise en page inspirée du Bento UI. Projet mené sur InDesign, utilisant des grilles et repères ainsi que l’automatisation typographique via les styles de paragraphes.</p>
+                  <div class="mt-2 flex gap-2 text-xs">
+                          <span class="px-2 py-1 border rounded">Adobe InDesign</span>
+                      </div>
+              </article>
+            <article class="reveal col-span-1 md:col-span-2 row-span-2 p-4 rounded-2xl glass shadow-md border border-gray-200 flex flex-col justify-between">
+        <h3 class="text-lg font-medium">Lien CV</h3>
+        <p class="text-sm text-gray-600 mt-1"><a href="documents/Bassem MEGHICHE.pdf" class="text-blue-500" target="_blank">Cliquer ici</a></p>
+              </article>
+              <div class="col-span-full my-1" bis_skin_checked="1">
+			<hr class="invisible">
+		</div>
+              <article class="reveal col-span-1 md:col-span-4 row-span-2 p-4 rounded-2xl glass shadow-md border border-gray-200 flex flex-col justify-between">
+        <h3 class="text-lg font-bold">ApiGen</h3>
+        <p class="text-sm text-gray-600 mt-1">Programme python permettant de récupérer une information sur un site web et la tester sur l'api de ce dernier jusqu'à ce que l'api renvoie un code "200". Utilisation de Selenium</p>
+                  <div class="mt-2 flex gap-2 text-xs">
+                          <span class="px-2 py-1 border rounded">Python</span>
+                          <span class="px-2 py-1 border rounded">Selenium</span>
+                      </div>
+              </article>
+            <article class="reveal col-span-1 md:col-span-2 row-span-2 p-4 rounded-2xl glass shadow-md border border-gray-200 flex flex-col justify-between">
+        <h3 class="text-lg font-medium">Lien dépot Github</h3>
+        <p class="text-sm text-gray-600 mt-1"><a href="https://github.com/b4ssem/ApiGen" class="text-blue-500" target="_blank">Cliquer ici</a></p>
+              </article>
+              <div class="col-span-full my-1" bis_skin_checked="1">
+			<hr class="invisible">
+		</div>
+            <article class="reveal col-span-1 md:col-span-4 row-span-2 p-4 rounded-2xl glass shadow-md border border-gray-200 flex flex-col justify-between">
+        <h3 class="text-lg font-bold">Production audiovisuelle</h3>
+        <p class="text-sm text-gray-600 mt-1">Réalisation d’un tutoriel vidéo sur les réglages de l’exposition et le triangle d’exposition. Projet conçu pour TikTok, avec scénario, tournage, montage et sous-titres en anglais.</p>
+                  <div class="mt-2 flex gap-2 text-xs">
+                          <span class="px-2 py-1 border rounded">DaVinci Resolve</span>
+                          <span class="px-2 py-1 border rounded">After Effects</span>
+                      </div>
+              </article>
+            <article class="reveal col-span-1 md:col-span-2 row-span-2 p-4 rounded-2xl glass shadow-md border border-gray-200 flex flex-col justify-between">
+        <h3 class="text-lg font-medium">Lien vidéo</h3>
+        <p class="text-sm text-gray-600 mt-1"><a href="documents/triangle.mp4" class="text-blue-500" target="_blank">Cliquer ici</a></p>
+              </article>
+              <div class="col-span-full my-1" bis_skin_checked="1">
+			<hr class="invisible">
+		</div>
+              <article class="reveal col-span-1 md:col-span-4 row-span-2 p-4 rounded-2xl glass shadow-md border border-gray-200 flex flex-col justify-between">
+        <h3 class="text-lg font-bold">Conception graphique</h3>
+        <p class="text-sm text-gray-600 mt-1">Création du programme du festival “Formule Bédé 10” (42 pages). Projet axé sur la conception graphique, la mise en page et l’optimisation des supports de diffusion imprimés.</p>
+                  <div class="mt-2 flex gap-2 text-xs">
+                          <span class="px-2 py-1 border rounded">Adobe InDesign</span>
+                      </div>
+              </article>
+            <article class="reveal col-span-1 md:col-span-2 row-span-2 p-4 rounded-2xl glass shadow-md border border-gray-200 flex flex-col justify-between">
+        <h3 class="text-lg font-medium">Lien rendu final</h3>
+        <p class="text-sm text-gray-600 mt-1"><a href="documents/Formule Bédé 10 -- Bande dessinée et plus à découvrir.pdf" class="text-blue-500" target="_blank">Cliquer ici</a></p>
+              </article>
+          </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="pt-8 border-t border-gray-200 mt-6 text-sm text-gray-500 text-center">
+    © <span id="year"></span> Bassem Meghiche
+  </footer>
+</main>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+      let delay = 0;
+      const delayStep = 150;
+      entries.sort((a,b) => a.target.compareDocumentPosition(b.target) & Node.DOCUMENT_POSITION_PRECEDING ? 1 : -1);
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          setTimeout(()=>{ entry.target.classList.add("visible"); }, delay);
+          delay += delayStep;
+        } else {
+          entry.target.classList.remove("visible");
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-zoom, .reveal-rotate').forEach(el => observer.observe(el));
+  });
+
+
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const lines = document.querySelectorAll(".hamburger-line");
+  const mobileLinks = document.querySelectorAll(".mobile-link");
+
+  let isMenuOpen = false;
+
+  menuBtn.addEventListener("click", () => {
+    isMenuOpen = !isMenuOpen;
+
+    if (isMenuOpen) {
+      mobileMenu.classList.remove("hidden");
+      mobileMenu.classList.add("flex");
+    } else {
+      mobileMenu.classList.add("hidden");
+      mobileMenu.classList.remove("flex");
+    }
+
+    if (isMenuOpen) {
+      lines[0].classList.add("rotate-45", "translate-y-2");
+      lines[1].classList.add("opacity-0");
+      lines[2].classList.add("-rotate-45", "-translate-y-2");
+    } else {
+      lines[0].classList.remove("rotate-45", "translate-y-2");
+      lines[1].classList.remove("opacity-0");
+      lines[2].classList.remove("-rotate-45", "-translate-y-2");
+    }
+  });
+
+  mobileLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      isMenuOpen = false;
+      mobileMenu.classList.add("hidden");
+      mobileMenu.classList.remove("flex");
+      
+      lines[0].classList.remove("rotate-45", "translate-y-2");
+      lines[1].classList.remove("opacity-0");
+      lines[2].classList.remove("-rotate-45", "-translate-y-2");
+    });
+  });
+</script>
+
+</body>
+</html>
+
