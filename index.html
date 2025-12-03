@@ -13,7 +13,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/5ab3b4642a.js" crossorigin="anonymous"></script>
   <style>
-    /* CORRECTION : On bloque le scroll horizontal sur le body uniquement */
     html, body {
       max-width: 100%;
       overflow-x: hidden;
@@ -23,7 +22,7 @@
     .bento-grid { grid-auto-rows: auto; }
     .glass { background: linear-gradient(135deg, rgba(0,0,0,0.02), rgba(0,0,0,0.01)); backdrop-filter: blur(6px); }
 
-    /* Reveal animations */
+    /* Animations reveal */
     .reveal, .reveal-down, .reveal-left, .reveal-right, .reveal-zoom, .reveal-rotate {
       opacity: 0;
       transition: all 0.7s ease;
@@ -31,13 +30,9 @@
     .reveal { transform: translateY(20px); }
     .reveal-down { transform: translateY(-20px); }
     .reveal-left { transform: translateX(-20px); }
-    
-    /* IMPORTANT : On réduit l'animation vers la droite pour éviter les bugs mobile */
     .reveal-right { transform: translateX(10px); }
-    
     .reveal-zoom { transform: scale(0.8); }
     .reveal-rotate { transform: rotate(-15deg) scale(0.8); }
-
     .visible.reveal, .visible.reveal-down, .visible.reveal-left,
     .visible.reveal-right, .visible.reveal-zoom, .visible.reveal-rotate {
       transform: none;
@@ -48,10 +43,10 @@
 <body class="bg-white text-gray-900 antialiased overflow-x-hidden">
 
 <header class="fixed w-full bg-white shadow z-50">
+  <!-- Navbar -->
   <div class="max-w-6xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
 
     <a href="#" class="text-xl font-semibold tracking-tight">B4ssem</a>
-
     <nav class="hidden md:flex space-x-4">
       <a href="#projects" class="text-sm hover:underline">Projets</a>
       <a href="#about" class="text-sm hover:underline">À propos</a>
@@ -68,13 +63,13 @@
   <nav id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-md flex-col px-6 py-4 space-y-4 md:hidden border-t border-gray-100">
     <a href="#projects" class="mobile-link block text-sm font-medium hover:text-indigo-600">Projets</a>
     <a href="#about" class="mobile-link block text-sm font-medium hover:text-indigo-600">À propos</a>
-    <a href="#about" class="mobile-link block text-sm font-medium hover:text-indigo-600">Contact</a>
+    <a href="contact.php" class="mobile-link block text-sm font-medium hover:text-indigo-600">Contact</a>
   </nav>
 </header>
 
 <main class="pt-24 max-w-6xl px-4 md:pt-0 md:px-6 md:mx-auto pb-12">
 
-  <!-- Hero Section -->
+  <!-- Section Hero -->
   <section class="flex flex-col md:flex-row items-center gap-6 mb-12 reveal-rotate md:min-h-screen flex flex-col justify-center gap-6">
 	<div class=" reveal-rotate glass rounded-2xl p-8 shadow-xl border border-gray-200">
       <div class="md:flex md:items-center md:gap-8">
@@ -95,7 +90,7 @@
     </div>
   </section>
 
-  <!-- About / Skills / Contact Section -->
+  <!-- A propos -->
   <section id="about"class="grid grid-cols-1 pt-24 md:grid-cols-6 gap-4 mb-12 md:pt-24">
     <aside class="reveal-zoom col-span-1 md:col-span-2 p-4 rounded-2xl shadow-lg glass border border-gray-200 ">
       <h2 class="font-medium">À propos</h2>
@@ -125,7 +120,7 @@
     </article>
   </section>
 
-  <!-- Experiences Section -->
+  <!-- Section expériences -->
   <section id="experiences" class="mb-12">
     <h2 class="text-2xl font-semibold mb-4">Mes Expériences</h2>
     <div class="grid grid-cols-2 md:grid-cols-6 gap-4 bento-grid auto-rows-auto">
@@ -200,7 +195,7 @@
     </div>
   </section>
 
-  <!-- Parcours Section -->
+  <!-- Section Parcours -->
   <section id="parcours" class="mb-12">
     <h2 class="text-2xl font-semibold mb-4">Mon Parcours</h2>
     <div class="grid grid-cols-1 md:grid-cols-6 gap-4 bento-grid auto-rows-auto">
@@ -311,7 +306,7 @@
     </div>
   </section>
 
-   <!-- Projets Section -->
+   <!-- Section Projets-->
   <section id="projects" class="mb-12 pt-14">
     <h2 class="text-2xl font-semibold mb-4">Projets</h2>
     <div class="grid grid-cols-1 md:grid-cols-6 gap-4 bento-grid auto-rows-auto">
